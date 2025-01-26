@@ -25,3 +25,22 @@
         hamburger.classList.toggle("active");
       });
       
+document.addEventListener("DOMContentLoaded", () => {
+  const readMoreButtons = document.querySelectorAll(".read-more");
+
+  readMoreButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      const card = button.closest(".service__card");
+      const description = card.querySelector(".service__description");
+
+      if (description.classList.contains("expanded")) {
+        description.classList.remove("expanded");
+        button.innerHTML = `Read more <span><i class="ri-arrow-right-line"></i></span>`;
+      } else {
+        description.classList.add("expanded");
+        button.innerHTML = `Read less <span><i class="ri-arrow-left-line"></i></span>`;
+      }
+    });
+  });
+});
