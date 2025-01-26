@@ -1,5 +1,7 @@
-// Select all the question boxes
+document.addEventListener("DOMContentLoaded", () => {
+  // Question boxes functionality
   const questionBoxes = document.querySelectorAll(".question__box");
+  console.log("Question boxes:", questionBoxes); 
 
   questionBoxes.forEach((box) => {
     const title = box.querySelector(".title");
@@ -17,16 +19,22 @@
       });
     });
   });
-      const hamburger = document.querySelector(".hamburger-menu");
-      const navLinks = document.querySelector(".nav__links");
 
-      hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-        hamburger.classList.toggle("active");
-      });
-      
-document.addEventListener("DOMContentLoaded", () => {
+  // Hamburger menu functionality
+  const hamburger = document.querySelector(".hamburger-menu");
+  const navLinks = document.querySelector(".nav__links");
+
+  if (hamburger && navLinks) {
+    console.log("Hamburger and nav links found."); 
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+      hamburger.classList.toggle("active");
+    });
+  }
+
+  // Read more button functionality
   const readMoreButtons = document.querySelectorAll(".read-more");
+  console.log("Read more buttons:", readMoreButtons); 
 
   readMoreButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
@@ -44,3 +52,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
